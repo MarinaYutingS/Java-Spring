@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="UTF-8"/>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+	<h1 style = "color: blue">Welcome to YUTING`s Page!</h1>
+	<p th:text="${counts}">Welcome! </p>
+	
+	<h3 >Current Visitor Count:<span id="count"></span></h3>
+</body>
+
+<script>
+setInterval(function(){
+	 $.get("currentcount",function(results){
+		$("#count").html(results); 
+		/* alert("Current Visitor Count:"+ results); */
+	});
+},3000);
+</script>
+
+</html>
